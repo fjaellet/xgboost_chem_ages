@@ -1,5 +1,7 @@
 
-
+data/allStar*
+data/Chemical_Ages.csv
+data/lamost_xgboost_he2022.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

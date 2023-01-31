@@ -1,0 +1,59 @@
+
+# RZ map
+topcat -stilts plot2plane \
+   xpix=699 ypix=560 \
+   xlabel='R_{Gal}\qquad [kpc]' ylabel='Z_{Gal}\qquad [kpc]' \
+    texttype=latex fontsize=20 \
+   xmin=0 xmax=16 ymin=-3 ymax=3 \
+   auxmap=magma auxflip=true auxmin=0 auxmax=13 \
+   auxvisible=true auxlabel='Chemical\quad age\qquad [Gyr]' \
+   legend=false \
+   layer=Grid \
+      in='match(13,11)' icmd='select Chemical_Age_Dec2022>0' \
+      x=Rg y=Zg weight=Chemical_Age_Dec2022 \
+      combine=median 
+
+# eZmax map
+topcat -stilts plot2plane \
+   xpix=699 ypix=560 \
+   xlog=true ylog=true xlabel=e ylabel='Z_{max}\qquad [kpc]' texttype=latex \
+    fontsize=20 \
+   xmin=0.006 xmax=1.009 ymin=0.01 ymax=7.86 \
+   auxmap=magma auxflip=true auxmin=0 auxmax=13 \
+   auxvisible=true auxlabel='Chemical\quad age\qquad [Gyr]' \
+   legend=false \
+   layer=Grid \
+      in='match(13,11)' icmd='select Chemical_Age_Dec2022>0' \
+      x=eccentricity_axi y=Zmax_axi weight=Chemical_Age_Dec2022 \
+      combine=median 
+
+# Tinsley diagram
+topcat -stilts plot2plane \
+   xpix=663 ypix=550 \
+   xlabel='[Fe/H]' ylabel='[Mg/Fe]' texttype=latex fontsize=20 \
+   xmin=-1.83 xmax=0.9 ymin=-0.254 ymax=0.683 \
+   auxmap=magma auxflip=true auxmin=0 auxmax=13 \
+   auxvisible=true auxlabel='Chemical\quad age\qquad [Gyr]' \
+   legend=false \
+   in='match(13,11)' icmd='select Chemical_Age_Dec2022>0' x=FE_H \
+    y=MG_FE \
+   layer_1=Grid \
+      weight_1=Chemical_Age_Dec2022 \
+      combine_1=median \
+   layer_2=Mark \
+      shading_2=translucent color_2=light_grey translevel_2=0.33 
+
+# Lindblad diagram
+topcat -stilts plot2plane \
+   xpix=663 ypix=550 \
+   xlabel='L_z^{axi}' ylabel='E^{axi}' texttype=latex fontsize=20 \
+   xmin=-91 xmax=413 ymin=-3336 ymax=-815 \
+   auxmap=magma auxflip=true auxmin=0 auxmax=13 \
+   auxvisible=true auxlabel='Chemical\quad age\qquad [Gyr]' \
+   legend=false \
+   layer=Mark \
+      in='match(13,11)' icmd='select Chemical_Age_Dec2022>0' \
+      x=-Lz_axi y=Energy_axi aux=Chemical_Age_Dec2022 \
+      shading=aux size=3 opaque=15 
+
+
