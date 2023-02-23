@@ -2,6 +2,7 @@
 data/allStar*
 data/Chemical_Ages.csv
 data/lamost_xgboost_he2022.csv
+data/Kepler_10-02-2023_Rcut.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
