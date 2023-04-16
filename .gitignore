@@ -7,6 +7,9 @@ data/APOGEE_DR17_bingoages_conservative_age_cut.fits
 
 im/feh_gradient*
 
+py/rain_xgboost_miglio2023.ipynb
+py/train_xgboost_allseismic.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
