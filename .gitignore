@@ -9,6 +9,7 @@ im/feh_gradient*
 
 py/rain_xgboost_miglio2023.ipynb
 py/train_xgboost_allseismic.ipynb
+py/tests_referee_report.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
